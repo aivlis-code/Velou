@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     // Redirigez l'utilisateur vers une page appropriée (par exemple, la liste des vélos)
-    header("Location: velos.php");
+    header("Location: index.php");
     exit;
 }
 ?>
