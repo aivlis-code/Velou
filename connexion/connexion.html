@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vélou</title>
+    <link rel="stylesheet" type="text/css" href="connexion.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Vélou</h2>
+        <form action="connexion.php" method="post">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <span id="emailError" class="error"></span>
+            <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            <span id="passwordError" class="error"></span>
+            <input type="submit" id="submit" value="Se connecter" disabled>
+        </form>
+    </div>
+    <script src="connexion.js"></script>
+</body>
+</html>
