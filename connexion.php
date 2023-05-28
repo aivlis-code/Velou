@@ -57,10 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($userPassword, $user['password'])) {
                 // le mot de passe est correct
                 if($user['isAdmin']){
-                    header("Location: indexadmin.php"); // Rediriger vers la page admin si l'utilisateur est un admin
+                    header("Location: adminindex.php"); // Rediriger vers la page admin si l'utilisateur est un admin
                     exit;
                 } else {
-                    header("Location: ../location/location.html"); // Rediriger vers la page normale si l'utilisateur n'est pas un admin
+                    header("Location: location.php"); // Rediriger vers la page normale si l'utilisateur n'est pas un admin
                     exit;
                 }
                 
