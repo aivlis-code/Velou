@@ -6,7 +6,7 @@
 </head>
 <body>
     <nav>
-        <button onclick="location.href='location.php'">Location</button>
+        <button onclick="location.href='index.php'">Location</button>
         <button onclick="location.href='connexion.php'">Connexion</button>
     </nav>
     <h1>Vélo à louer</h1>
