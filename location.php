@@ -6,8 +6,8 @@
 </head>
 <body>
     <nav>
-        <button onclick="location.href='../location/location.html'">Location</button>
-        <button onclick="location.href='../connexion/connexion.html'">Connexion</button>
+        <button onclick="location.href='location.php'">Location</button>
+        <button onclick="location.href='connexion.php'">Connexion</button>
     </nav>
     <h1>Vélo à louer</h1>
     <div id="bikeContainer">
