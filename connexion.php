@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = $result->fetch_assoc();
             if (password_verify($userPassword, $user['password'])) {
                 // le mot de passe est correct
-                header("Location: ../location/location.html");
+                header("Location: index.php");
                 exit;
             } else {
                 // le mot de passe est incorrect
