@@ -18,8 +18,7 @@ function print_nav() {
     echo "
     <nav>
         <ul>
-            <li><a href=\"index.php\">Home</a></li>
-            <li><a href=\"fa.php\">Louer</a></li>
+            <li><a href=\"index.php\">Louer</a></li>
             <li><a href=\"infos.php\">Info pratiques</a></li>
             <li><a href=\"Nous.php\">Qui sommes-nous?</a><li>
             <li><a href=\"Contacts.php\">Contact Us</a></li>
