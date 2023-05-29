@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Vélou</title>
-    <link rel="stylesheet" type="text/css" href="connexion.css">
+    <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
     <?php include 'Common.php';?>
@@ -10,12 +10,12 @@
 
     <div class="container">
         <h2>Vélou</h2>
-        <form action="connexion.php" method="post">
+        <form action="index.php" method="post">
             <input type="email" id="email" name="email" placeholder="Email" required>
             
             <input type="password" id="password" name="password" placeholder="Mot de passe" required>
            
-            <input type="submit" id="submit" value="Se connecter" disabled>
+            <input type="submit" id="submit" value="Se connecter">
         </form>
         <a href="Register.php">Register</a>
     </div>

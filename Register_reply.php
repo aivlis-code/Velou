@@ -2,18 +2,22 @@
 include 'Common.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $uname = $_POST['uname'] ?? '';
-    $password = $_POST['password'] ?? '';
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     // Perform any necessary validation or processing with the form data here
 
     // Example: Insert the data into the database
-    $req = $bdd->prepare('INSERT INTO utilisateur (username, password, Admin) VALUES (:username, :password, ::admin)');
+    $req = $bdd->prepare('INSERT INTO user (Nom, Prenom, Mail, MdP, is_Admin) VALUES (:name, :surname, :email, :password, :admin)');
 
     $req->execute(array(
-        'username' => $uname,
+        'name' => $name,
+        'surname' => $surname,
+        'email' => $email,
         'password' => $password,
-        'admin' => 0
+        'admin' => 0,
     ));
 
     // Redirect to a success page or perform any other desired actions

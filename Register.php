@@ -11,8 +11,10 @@
     <div class="container">
         <h2>Register pour vélou</h2>
         <form action="Register_reply.php" method="POST">
-            <input type="text" name="uname" placeholder="Username" required>
-            <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            <input type="varchar" name="name" placeholder="Nom" required>
+            <input type="varchar" name="surname" placeholder="Prenom" required>
+            <input type="varchar" name="email" placeholder="Email" required>
+            <input type="varchar" name="password" placeholder="Password" required>
             <button type="submit">Submit</button>
         </form>
         <a href="Register.php">Register</a>
