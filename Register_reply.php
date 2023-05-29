@@ -7,9 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Perform any necessary validation or processing with the form data here
 
-    // Example: Insert the data into the database
+    // Insertion des données dans le database avec du code sql
     $req = $bdd->prepare('INSERT INTO user (Nom, Prenom, Mail, MdP, is_Admin) VALUES (:name, :surname, :email, :password, :admin)');
 
     $req->execute(array(
@@ -20,11 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'admin' => 0,
     ));
 
-    // Redirect to a success page or perform any other desired actions
+    // Redirection envers la page de bon registration si les infos sont valables
     header('Location: registration_success.php');
     exit;
 } else {
-    // Handle the case where the form is not submitted correctly
+    // Dans le cas où les infos ne sont pas bonne il affiche un erreur 
     echo "Form submission error.";
 }
 ?>

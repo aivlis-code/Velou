@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
+    <!-- En-tête de la page -->
     <header>
         <h1>Détails du Vélo</h1>
     </header>
@@ -18,11 +19,15 @@
         <div class="container">
             <?php
                 if (isset($_GET['Bike_ID'])) {
+                    // Récupération de l'identifiant du vélo depuis les paramètres GET
                     $Bike_ID = $_GET['Bike_ID'];
+                    
+                    // Préparation et exécution de la requête pour obtenir les détails du vélo
                     $requete = $bdd->prepare('SELECT * FROM bikes WHERE Bike_ID = :Bike_ID');
                     $requete->execute(array('Bike_ID' => $Bike_ID));
                     $row = $requete->fetch();
                     
+                    // Affichage des détails du vélo
                     echo '<div class="bike_details">';
                     echo '<img src="' . $row['Image'] . '" alt="Image vélo">';
                     echo '<p>' . $row['Description'] . '</p>';
@@ -30,6 +35,7 @@
                     echo '<p>Nom : ' . $row['Nom'] . '</p>';
                     echo '<p>Prix de location: ' . $row['Prix'] . ' €</p>';
 
+                    // Formulaire de réservation
                     echo '<form method="post" action="reserver.php">';
                     echo '<label for="date_debut">Date de début:</label>';
                     echo '<input type="date" id="date_debut" name="date_debut" required>';
@@ -41,6 +47,7 @@
 
                     echo '</div>';
                     
+                    // Fermeture de la requête
                     $requete->closeCursor();
                 } else {
                     echo "<p>Aucun vélo n'a été sélectionné.</p>";

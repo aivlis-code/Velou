@@ -7,7 +7,7 @@
 <body>
     <?php include 'Common.php';?>
     <?php print_nav();?>
-
+    <!-- Si les informations données sont bonnes alors il y a cette page qui affiche le message suivant-->
     <div class="container">
         <h2>Merci pour ton enregistrement</h2>
         <p>Bravo maintenent ton account Vélou a été créé.</p>

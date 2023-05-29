@@ -7,7 +7,7 @@
 <body>
     <?php include 'Common.php';?>
     <?php print_nav();?>
-
+    <!-- insertion d'un formulaire pour l'insertion des données dans la base de données-->
     <div class="container">
         <h2>Register pour vélou</h2>
         <form action="Register_reply.php" method="POST">
