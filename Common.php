@@ -1,7 +1,7 @@
 <?php
 // Configuration de la base de donnees
 $host = "localhost"; // Database host
-$dbname = "velou"; // Database name
+$dbname = "db_velou"; // Database name
 $username = "root"; // Database username
 $password = "root"; // Database password
 
