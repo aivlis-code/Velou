@@ -5,8 +5,10 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
-    <?php include 'Common.php';?>
-    <?php print_nav();?>
+    <?php include 'Common.php'; 
+        print_header(); 
+        print_nav();
+        ?>
     <!-- Si les informations données sont bonnes alors il y a cette page qui affiche le message suivant-->
     <div class="container">
         <h2>Merci pour ton enregistrement</h2>

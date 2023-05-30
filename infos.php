@@ -5,8 +5,10 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
-    <?php include 'Common.php'; ?>
-    <?php print_nav(); ?>
+    <?php include 'Common.php'; 
+        print_header(); 
+        print_nav();
+        ?>
 
     <main>
         <h2>Infos Pratiques</h2>

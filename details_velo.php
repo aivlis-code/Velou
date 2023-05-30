@@ -5,14 +5,9 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
-    <!-- En-tête de la page -->
-    <header>
-        <h1>Détails du Vélo</h1>
-    </header>
-
-    <?php 
-        include 'Common.php'; 
-        print_nav(); 
+    <?php include 'Common.php'; 
+    print_header(); 
+    print_nav();
     ?>
 
     <main>
@@ -42,9 +37,18 @@
                     echo '<label for="date_fin">Date de fin:</label>';
                     echo '<input type="date" id="date_fin" name="date_fin" required>';
                     echo '<input type="hidden" name="Bike_ID" value="' . $Bike_ID . '">';
-                    echo '<a href="details_velo.php?Bike_ID='. $row['ID_location'].'<button type="submit">Réserver</button>';
+                    // echo '<a href="details_velo.php?Bike_ID='. $row['Bike_ID'].'<button type="submit">Réserver</button>';
+                    echo "<input type=\"submit\" id=\"submit\" value=\"Reserver\">";
                     echo '</form>';
-
+                    
+                    // Vérification si l'utilisateur est connecté en tant qu'administrateur
+                    if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1) {
+                        // Affichage du bouton "Administrer" pour l'administrateur
+                        echo '<form method="post" action="Modifier.php">';
+                        echo '<input type="hidden" name="Bike_ID" value="' . $Bike_ID . '">';
+                        echo "<input type=\"submit\" id=\"submit\" value=\"Modifier\">";
+                        echo '</form>';
+                    }
                     echo '</div>';
                     
                     // Fermeture de la requête

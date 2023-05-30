@@ -1,34 +1,35 @@
 <?php
 include 'Common.php';
 
-$username = $_POST['email'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
 // On verfie si les entrees POST correspondent a celles de la BDD
-$verifinfo = $bdd->prepare('SELECT email, password, admin FROM utilisateur WHERE username = :username AND password = :password');
+$verifinfo = $bdd->prepare('SELECT * FROM user WHERE Mail = :email AND MdP = :password');
 $verifinfo->execute (array(
-    'username' => $username,
+    'email' => $email,
     'password' => $password
 ));
 
 // Si un resultat est retourne sinon retour a la page login
 if ($row = $verifinfo->fetch()) {
-    session_start(); // always call this!
-    $_SESSION['username'] = $row['username']; // sauvegarde du nom de l'utilisaeur dans une session
-    if ($row['is_Admin'] == true) {
-        $_SESSION['is_Admin'] = true; 
+    $_SESSION['email'] = $row['Mail']; // sauvegarde du nom de l'utilisaeur dans une session
+    $_SESSION['prenom'] = $row['Prenom'];
+    $_SESSION['user_id'] = $row['ID_user'];
+
+    if ($row['is_Admin'] == 1) {
+        // User is admin
+        $_SESSION['is_admin'] = 1; 
     } else {
-        $_SESSION['is_Admin'] = false;
+        // User is not admin
+        $_SESSION['is_admin'] = 0;
     }
-    // usage example:
-    // if ($_SESSION['is_admin'] == true) {
-    //    echo "<a href="Add_bikes.php">Add bike</a>;
-    // }
-    header('Location: rental.php');
+    // Redirect after saving the user's information in $_SESSION
+    header('Location: index.php');
     exit;
 }
 else {
-    header('Location: login.html');
+    header('Location: Login.html');
     exit;
 }
 ?>

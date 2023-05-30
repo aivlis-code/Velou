@@ -5,13 +5,11 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
-    <!-- En-tête de la page -->
-    <header>
-        <h1>Vélou</h1>
-    </header>
-    <!-- Nous ajoutons la page common.php et la fonciton print_nav -->
-    <?php include 'Common.php'; ?>
-    <?php print_nav(); ?>
+    <!--Nous rajoutons la page common et les fonctions print_header et print_nav -->
+    <?php include 'Common.php'; 
+        print_header(); 
+        print_nav();
+        ?>
 
     <main>
         <!-- Titre de la page -->

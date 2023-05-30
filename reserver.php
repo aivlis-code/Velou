@@ -1,31 +1,42 @@
-<?php
-    include 'Common.php';
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Réserver</title>
+    <link rel="stylesheet" type="text/css" href="stylevelou.css">
+</head>
+<body>
+    <?php
 
-    // Vérifier que toutes les données nécessaires ont été soumises
-    if (isset($_POST['Bike_ID'], $_POST['date_debut'], $_POST['date_fin'])) {
-        $Bike_ID = $_POST['Bike_ID'];
-        $date_debut = $_POST['date_debut'];
-        $date_fin = $_POST['date_fin'];
+        include 'Common.php'; 
+        print_header(); 
+        print_nav();
 
-        // Vérifiez que l'utilisateur est connecté
-        if (is_user_logged_in()) {
-            // Obtenir l'ID de l'utilisateur connecté
-            $user_id = get_logged_in_user_id();
 
-            // Préparez une requête SQL pour insérer les informations de réservation dans la base de données
-            $requete = $bdd->prepare('INSERT INTO location (Bike_ID, ID_user, date_debut, date_fin) VALUES (:Bike_ID, :ID_user, :date_debut, :date_fin)');
-            $requete->execute(array(
-                'Bike_ID' => $Bike_ID,
-                'ID_user' => $ID_user,
-                'date_debut' => $date_debut,
-                'date_fin' => $date_fin
-            ));
+        if (isset($_SESSION['email'])) {
 
-            echo "Votre réservation a bien été enregistrée. Merci de choisir Vélou !";
+            // Vérifier que toutes les données nécessaires ont été soumises
+            if (isset($_POST['Bike_ID'], $_POST['date_debut'], $_POST['date_fin'])) {
+                $Bike_ID = $_POST['Bike_ID'];
+                $date_debut = $_POST['date_debut'];
+                $date_fin = $_POST['date_fin'];
+                $user_id = $_SESSION['user_id'];
+
+                $requete = $bdd->prepare('INSERT INTO location (Bike_ID, ID_user, date_debut, date_fin) VALUES (:Bike_ID, :ID_user, :date_debut, :date_fin)');
+                $requete->execute(array(
+                    'Bike_ID' => $Bike_ID,
+                    'ID_user' => $user_id,
+                    'date_debut' => $date_debut,
+                    'date_fin' => $date_fin
+                ));
+            } else {
+                echo "Informations de réservation incomplètes. Veuillez réessayer.";
+            }
         } else {
-            echo "Veuillez vous connecter pour réserver un vélo.";
+            // The user is not logged: go to login
+            header('Location: Login.php');
+            exit;
         }
-    } else {
-        echo "Informations de réservation incomplètes. Veuillez réessayer.";
-    }
+        print_footer();
 ?>
+</body>
+</html>

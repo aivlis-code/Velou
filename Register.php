@@ -5,8 +5,10 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
-    <?php include 'Common.php';?>
-    <?php print_nav();?>
+    <?php include 'Common.php'; 
+        print_header(); 
+        print_nav();
+        ?>
     <!-- insertion d'un formulaire pour l'insertion des données dans la base de données-->
     <div class="container">
         <h2>Register pour vélou</h2>

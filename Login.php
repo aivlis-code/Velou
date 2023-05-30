@@ -2,22 +2,23 @@
 <html>
 <head>
     <title>Vélou</title>
+    <link rel="shortcut icon" href="Pictures/LogoAppli.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
-    <?php include 'Common.php';?>
-    <?php print_nav();?>
-
+    <!-- Nous avons inclu notre page Common pour apporter les infos et functions comme print_nav et print_footer -->
+    <?php include 'Common.php'; 
+    print_header(); 
+    print_nav();
+    ?>
+    <!-- Nous avons mis un container-->
     <div class="container">
-        <!-- En-tête de la page -->
         <h2>Vélou</h2>
 
         <!-- Formulaire de connexion -->
-        <form action="index.php" method="post">
+        <form action="login_reply.php" method="post">
             <input type="email" id="email" name="email" placeholder="Email" required>
-            
             <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-           
             <input type="submit" id="submit" value="Se connecter">
         </form>
 
