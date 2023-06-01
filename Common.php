@@ -1,9 +1,9 @@
 <?php
 
-// This file contains functions used in other files.
-// Always include this file in all the other files, as it takes care of starting the session.
+// Ce file contient fontions utilisés dans d'autres pages.
+// Toujours include ce file dans toutes les autres pages car il fait commencer la starting session.
 
-// Start the session only if the session is not already started.
+// Start session si la session n'a pas déjà commencé.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -44,8 +44,9 @@ function print_nav() {
             <li><a href=\"infos.php\">Info pratiques</a></li>
             <li><a href=\"Nous.php\">Qui sommes-nous?</a></li>
             <li><a href=\"Contacts.php\">Contact Us</a></li>";
-    // Si l'utilisateur fait le login alors print la page logout, si non login.
+    // Si l'utilisateur fait le login alors print la page logout et mes vélos loués, si non login.
     if (isset($_SESSION['email'])) {
+        echo "<li><a href=\"mon_profile.php\">Mes vélos loués</a></li>";
         echo "<li><a href=\"Logout.php\">Logout</a></li>";
     } else {
         echo "<li><a href=\"Login.php\">Login</a></li>";
@@ -57,5 +58,13 @@ function print_nav() {
 // Fonction pour afficher le pied de page avec la date (seulement année)
 function print_footer() {
     echo "<footer>" . "<p>&copy;" . date("Y") . " Vélou. Tous droits réservés." . "</footer>";
+}
+
+// S'il y a pas des overlap des dates retourne 0, en cas contraire retourne le numéro de j de overlap
+function datesOverlap($start_one,$end_one,$start_two,$end_two) {
+    if($start_one <= $end_two && $end_one >= $start_two) { //si les dates overlap
+         return min($end_one,$end_two)->diff(max($start_two,$start_one))->days + 1; //retour les n jours de overlap
+    }
+    return 0; //Retour 0 si no overlap
 }
 ?>

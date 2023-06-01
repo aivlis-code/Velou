@@ -2,14 +2,16 @@
 <html>
 <head>
     <title>Infos Pratiques</title>
+    <link rel="shortcut icon" href="Pictures/LogoAppli.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
+     <!--Nous rajoutons la page common et les fonctions print_header et print_nav -->
     <?php include 'Common.php'; 
         print_header(); 
         print_nav();
         ?>
-
+    <!-- Ajout du titre de la page des différentes parties comme liste -->
     <main>
         <h2>Infos Pratiques</h2>
         <p>Voici quelques informations pratiques pour faciliter votre expérience de location de vélos :</p>
@@ -23,6 +25,7 @@
         </ul>
     </main>
 
-    <?php print_footer();?>
+    <?php //Nous ajoutons la fonction print_footer
+    print_footer();?>
 </body>
 </html>

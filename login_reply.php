@@ -1,5 +1,6 @@
 <?php
-include 'Common.php';
+ //Nous rajoutons la page common
+ include 'Common.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -18,13 +19,13 @@ if ($row = $verifinfo->fetch()) {
     $_SESSION['user_id'] = $row['ID_user'];
 
     if ($row['is_Admin'] == 1) {
-        // User is admin
+        // User est admin
         $_SESSION['is_admin'] = 1; 
     } else {
-        // User is not admin
+        // User est pas admin
         $_SESSION['is_admin'] = 0;
     }
-    // Redirect after saving the user's information in $_SESSION
+    // Redirection après avoir sauvegarder les informations de l'user dans $_SESSION
     header('Location: index.php');
     exit;
 }

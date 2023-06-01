@@ -13,7 +13,7 @@
     ?>
     <!-- Nous avons mis un container-->
     <div class="container">
-        <h2>Vélou</h2>
+        <h2>Login</h2>
 
         <!-- Formulaire de connexion -->
         <form action="login_reply.php" method="post">
@@ -25,6 +25,8 @@
         <!-- Lien vers la page d'inscription -->
         <a href="Register.php">Register</a>
     </div>
-    <?php print_footer();?>
+    <?php 
+    //Nous ajoutons la fonction print_footer
+    print_footer();?>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Contact Us</title>
+    <link rel="shortcut icon" href="Pictures/LogoAppli.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
@@ -12,11 +13,12 @@
         ?>
 
     <main>
-        <!-- Titre de la page -->
+        <!-- titre de la page -->
         <h2>Contact Us</h2>
 
         <!-- Informations de contact -->
         <p>Pour toute information ou assistance, n'hésitez pas à nous contacter :</p>
+        <!-- bullet point liste à point-->
         <ul>
             <li>Email: info@velou.com</li>
             <li>Téléphone: 0746491134</li>

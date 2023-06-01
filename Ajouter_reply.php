@@ -5,10 +5,14 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
+     <!--Nous rajoutons la page common et les fonctions print_header et print_nav -->
     <?php include 'Common.php'; 
     print_header(); 
     print_nav();
-        
+
+        echo  "<h2>Confirmation ajoute vélo</h2>";
+
+        //requete de retour pour inserer les données dans notre database 
         $req = $bdd->prepare('INSERT INTO bikes(Model, Nom, Description, Image, Prix) VALUES (:Model, :Nom, :Description, :Image, :Prix)');
                 
         $req->execute(array(
@@ -20,7 +24,7 @@
         ));
 
             echo "Vélo ajouté correctement" ;
-
+            // Nous ajoutons la fonction print_footer
             print_footer();
         ?>
 
