@@ -47,6 +47,33 @@ nav ul li a:hover {
     color: var(--secondary-color);
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1 1 30%; /* Force columns to wrap after every third one */
+    margin: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+}
+
 footer {
     background-color: var(--primary-color);
     color: var(--highlight-color);
@@ -58,5 +85,9 @@ footer {
     nav ul {
         flex-direction: column;
         align-items: center;
+    }
+
+    .col {
+        flex: 1 1 100%;
     }
 }
