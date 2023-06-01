@@ -1,48 +1,62 @@
-/* CSS styles for the web pages */
+:root {
+    --primary-color: #f2f2f2; /* Gris clair */
+    --secondary-color: #fff; /* Blanc */
+    --highlight-color: #0f0; /* Vert */
+    --font-family: 'Roboto', sans-serif;
+}
 
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
     padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: var(--primary-color);
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 10px;
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
-    display: block;
-    padding: 10px;
+    color: var(--highlight-color);
     text-decoration: none;
-    color: #333;
+    padding: 10px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-main {
-    margin: 20px;
+    color: var(--secondary-color);
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
+    padding: 20px;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }
