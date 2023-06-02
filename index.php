@@ -39,13 +39,19 @@
                         }
 
                         echo '<div class="col">';
-                        echo '<img style="max-width:250px;width:100%" src="' . $row['Image'] . '" alt="Image vélo">';
-                        echo '<p>' . $row['Description'] . '</p>';
-                        echo '<p>Modèle : ' . $row['Model'] . '</p>';
-                        echo '<p>Nom : ' . $row['Nom'] . '</p>';
-                        echo '<p>Prix de location: ' . $row['Prix'] . ' €</p>';
-                        echo '<a href="details_velo.php?Bike_ID=' . $row['Bike_ID'] . '"><button>Détails</button></a>';
+                        echo '  <div class="flex-container">';
+                        echo '    <div class="image-container">';
+                        echo '      <img style="max-width:250px;width:100%" src="' . $row['Image'] . '" alt="Image vélo">';
+                        echo '    </div>';
+                        echo '    <div class="text-container">';
+                        echo '      <p>' . $row['Description'] . '</p>';
+                        echo '      <p>Modèle : ' . $row['Model'] . '</p>';
+                        echo '      <p>Nom : ' . $row['Nom'] . '</p>';
+                        echo '      <p>Prix de location: ' . $row['Prix'] . ' €</p>';
+                        echo '    </div>';
+                        echo '  </div>';
                         echo '</div>';
+
 
                         // Fermeture de la ligne de conteneur après chaque 3 vélos ou pour le dernier vélo
                         if ($i % 3 == 2 || $i == $contenu->rowCount() - 1) {
