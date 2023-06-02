@@ -1,7 +1,7 @@
 :root {
     --primary-color: #8CB561; /* Vert */
     --secondary-color: #F6EFE2; /* Beige */
-    --highlight-color: #0000000; /* Noir */
+    --highlight-color: #000000; /* Noir */
     --font-family: 'Roboto', sans-serif;
 }
 
@@ -15,6 +15,9 @@ body {
     font-family: var(--font-family);
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -22,6 +25,11 @@ header {
     color: var(--highlight-color);
     padding: 20px;
     text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin: 24px;
 }
 
 nav {
@@ -40,33 +48,37 @@ nav ul li a {
     color: var(--highlight-color);
     text-decoration: none;
     padding: 10px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: none;
 }
 
 nav ul li a:hover {
     color: var(--secondary-color);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 24px;
 }
 
 .col {
     flex: 1 1 30%; /* Force columns to wrap after every third one */
     margin: 1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
     padding: 1em;
+    background-color: var(--secondary-color);
 }
 
 .col img {
@@ -74,11 +86,22 @@ nav ul li a:hover {
     height: auto;
 }
 
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}
+
 footer {
     background-color: var(--primary-color);
     color: var(--highlight-color);
     padding: 20px;
     text-align: center;
+    margin-top: auto;
 }
 
 @media screen and (max-width: 600px) {
