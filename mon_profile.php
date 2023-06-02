@@ -15,8 +15,8 @@
     <!-- ajoute d'un tableau-->
     <table>
         <tr>
-            <th>Bike Name</th>
-            <th>Bike Model</th>
+            <th>Name Vélo</th>
+            <th>Model Vélo</th>
             <th>From</th>
             <th>To</th>
         </tr>

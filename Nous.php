@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
-     <!--Nous rajoutons la page common et les fonctions print_header et print_nav -->
+    <!--Nous rajoutons la page common et les fonctions print_header et print_nav -->
     <?php include 'Common.php'; 
     print_header(); 
     print_nav();

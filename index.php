@@ -21,9 +21,7 @@
                     // Vérification si l'utilisateur est connecté en tant qu'administrateur
                     if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1) {
                         // Affichage du bouton "Ajouter" pour l'administrateur
-                        echo '<form method="post" action="Ajouter.php">';
-                        echo "<input type=\"submit\" id=\"submit\" value=\"Ajouter un vélo\">";
-                        echo '</form>';
+                        echo '<a href="Ajouter.php">Ajouter un vélo</a>';
                     }
 
                     // Récupération des données des vélos depuis la base de données
@@ -39,19 +37,13 @@
                         }
 
                         echo '<div class="col">';
-                        echo '  <div class="flex-container">';
-                        echo '    <div class="image-container">';
-                        echo '      <img style="max-width:250px;width:100%" src="' . $row['Image'] . '" alt="Image vélo">';
-                        echo '    </div>';
-                        echo '    <div class="text-container">';
-                        echo '      <p>' . $row['Description'] . '</p>';
-                        echo '      <p>Modèle : ' . $row['Model'] . '</p>';
-                        echo '      <p>Nom : ' . $row['Nom'] . '</p>';
-                        echo '      <p>Prix de location: ' . $row['Prix'] . ' €</p>';
-                        echo '    </div>';
-                        echo '  </div>';
+                        echo '<img style="max-width:250px;width:100%" src="' . $row['Image'] . '" alt="Image vélo">';
+                        echo '<p>' . $row['Description'] . '</p>';
+                        echo '<p>Modèle : ' . $row['Model'] . '</p>';
+                        echo '<p>Nom : ' . $row['Nom'] . '</p>';
+                        echo '<p>Prix de location: ' . $row['Prix'] . ' €</p>';
+                        echo '<a href="details_velo.php?Bike_ID=' . $row['Bike_ID'] . '">Détails</a>';
                         echo '</div>';
-
 
                         // Fermeture de la ligne de conteneur après chaque 3 vélos ou pour le dernier vélo
                         if ($i % 3 == 2 || $i == $contenu->rowCount() - 1) {

@@ -26,7 +26,7 @@
                 $diff = date_diff(date_create($date_debut), date_create($date_fin));
                 $rentalDays = $diff->format('%a');
 
-                // Vérification si le période est inférieur à 10jj
+                // Vérification si le période est inférieur à 10j
                 if ($rentalDays < 10) {
                     // La reservation est inférieure à 10 j.
                     // On doit verifier la disponibilité du vélo dans ces dates.

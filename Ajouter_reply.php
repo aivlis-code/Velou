@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Ajouter un vélo</title>
+    <link rel="shortcut icon" href="Pictures/LogoAppli.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="stylevelou.css">
 </head>
 <body>
