@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #f2f2f2; /* Gris clair */
-    --secondary-color: #fff; /* Blanc */
-    --highlight-color: #0f0; /* Vert */
+    --primary-color: #8CB561; /* Vert */
+    --secondary-color: #F6EFE2; /* Beige */
+    --highlight-color: #0000000; /* Noir */
     --font-family: 'Roboto', sans-serif;
 }
 
