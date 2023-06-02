@@ -25,17 +25,23 @@ header {
     color: var(--highlight-color);
     padding: 20px;
     text-align: center;
-    margin-bottom: 24px;
 }
 
 h2, h3, h4, h5, h6, ul {
     text-align: center;
     color: var(--highlight-color);
-    margin-bottom: 24px;
+    margin: 24px 0;
+}
+
+p, li {
+    text-align: justify;
+    color: var(--highlight-color);
+    margin: 20px 0;
 }
 
 nav {
     background-color: var(--primary-color);
+    margin-bottom: 0;
 }
 
 nav ul {
@@ -44,7 +50,6 @@ nav ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 24px;
 }
 
 nav ul li a {
@@ -66,6 +71,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
+    gap: 20px;
 }
 
 .row {
@@ -93,11 +99,49 @@ nav ul li a:hover {
 a {
     color: var(--primary-color);
     text-decoration: none;
+    background-color: var(--highlight-color);
+    padding: 10px;
+    transition: all 0.3s ease;
 }
 
 a:hover {
     color: var(--highlight-color);
     text-decoration: underline;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+form button:hover {
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
 }
 
 footer {
@@ -105,69 +149,10 @@ footer {
     color: var(--highlight-color);
     padding: 20px;
     text-align: center;
-    margin-top: 24px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-button {
-    background-color: var(--primary-color);
-    color: var(--highlight-color);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--highlight-color);
-}
-
-/* Ajouté pour les détails du vélo */
-.bike_details {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 2em;
-}
-
-.bike_details img {
-    max-width: 250px;
-    max-height : 300px
-    height: auto;
-    flex-shrink: 0;
-}
-
-.bike_details p {
-    flex-grow: 1;
-}
-
-form {
-    flex-grow: 1;
-}
-
-form label, 
-form input[type="date"], 
-form input[type="submit"] {
-    display: block;
-    margin-bottom: 1em;
-}
-
-form input[type="submit"] {
-    background-color: var(--primary-color);
-    color: var(--highlight-color);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    background-color: var(--highlight-color);
-    color: var(--primary-color);
+@media only screen and (max-width: 600px) {
+    .col {
+        flex: 0 1 calc(100% - 2em);
+    }
 }
